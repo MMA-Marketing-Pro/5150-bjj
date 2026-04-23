@@ -1,0 +1,155 @@
+{
+  "name": "5150 Martial Arts",
+  "slug": "5150-bjj",
+  "website": "https://5150bjj.com",
+  "businessType": "Brazilian Jiu-Jitsu & Martial Arts Academy",
+  "tagline": "The #1 Jiu Jitsu Academy in Rockland, NY",
+  "city": "Nyack",
+  "region": "New York",
+  "neighborhood": "Rockland County",
+  "siteStructure": {
+    "totalPages": 9,
+    "isSinglePage": false,
+    "pages": [
+      { "url": "https://5150bjj.com/home", "label": "Home", "slug": "index", "type": "home", "screenshotPath": "sites/5150-bjj/screenshot-before.png" },
+      { "url": "https://5150bjj.com/programs", "label": "Programs", "slug": "programs", "type": "services", "screenshotPath": "sites/5150-bjj/screenshots/programs-before.png" },
+      { "url": "https://5150bjj.com/adults-gracie-jiu-jitsu", "label": "Adults Gracie Jiu-Jitsu", "slug": "adults-gracie-jiu-jitsu", "type": "program-detail", "screenshotPath": "sites/5150-bjj/screenshots/adults-gracie-jiu-jitsu-before.png" },
+      { "url": "https://5150bjj.com/kids-gracie-jiu-jitsu", "label": "Kids Gracie Jiu-Jitsu", "slug": "kids-gracie-jiu-jitsu", "type": "program-detail", "screenshotPath": "sites/5150-bjj/screenshots/kids-gracie-jiu-jitsu-before.png" },
+      { "url": "https://5150bjj.com/tiny-shark-parent-and-me", "label": "Tiny Sharks — Parent & Me", "slug": "tiny-sharks", "type": "program-detail", "screenshotPath": "sites/5150-bjj/screenshots/tiny-shark-parent-and-me-before.png" },
+      { "url": "https://5150bjj.com/adult-gracie-jiu-jitsu-mma-striking-grapling", "label": "Adult Kickboxing", "slug": "adult-kickboxing", "type": "program-detail", "screenshotPath": "sites/5150-bjj/screenshots/adult-gracie-jiu-jitsu-mma-striking-grapling-before.png" },
+      { "url": "https://5150bjj.com/instructors", "label": "Instructors", "slug": "instructors", "type": "team", "screenshotPath": "sites/5150-bjj/screenshots/instructors-before.png" },
+      { "url": "https://5150bjj.com/class-schedule", "label": "Class Schedule", "slug": "class-schedule", "type": "schedule", "screenshotPath": "sites/5150-bjj/screenshots/class-schedule-before.png" },
+      { "url": "https://5150bjj.com/contact", "label": "Contact", "slug": "contact", "type": "contact", "screenshotPath": "sites/5150-bjj/screenshots/contact-before.png" }
+    ]
+  },
+  "pageContent": {
+    "home": {
+      "heroHeadline": "The #1 Jiu Jitsu Academy in Rockland, NY",
+      "heroSubtext": "Transform your life with world-class Gracie Jiu-Jitsu training in Rockland, NY. Perfect for all ages and skill levels, our classes build strength, self-discipline, and real-world self-defense skills in a supportive, family-friendly environment.",
+      "heroCTA": "Book Your Free Class",
+      "trialSteps": [
+        { "step": 1, "text": "Click the \"Book Your Free Class\" button and fill out the form." },
+        { "step": 2, "text": "Choose your class calendar and pick a date & time." },
+        { "step": 3, "text": "You'll get an email and SMS confirmation with all the details." }
+      ],
+      "valueProp": "Jiu Jitsu Classes for Kids & Adults — Build Confidence and Life Skills Safely!",
+      "valuePropSubtext": "Discover safe and effective martial arts training for kids and adults. Our expert-led programs boost confidence, self-esteem, character, and social skills in a fun, supportive environment. Perfect for all ages and skill levels!",
+      "programsOverview": [
+        { "name": "Adults Gracie Jiu-Jitsu", "description": "Enhance your fitness, cardiovascular health, and self-defense skills with Adult Gracie Jiu-Jitsu. Our expert-led classes provide a fun, engaging way to boost strength, flexibility, and overall well-being." },
+        { "name": "Kids Gracie Jiu-Jitsu", "description": "Our Kids Gracie Jiu-Jitsu program develops strength, discipline, and leadership in a fun, safe, and supportive environment." },
+        { "name": "Tiny Sharks — Parent & Me", "description": "This interactive class promotes physical, mental, and emotional development, helping children build self-control, coordination, balance, and social skills while having fun with their parents!" },
+        { "name": "Adult Kickboxing", "description": "Join our 5150 kickboxing classes to enhance your fitness with a dynamic mix of striking techniques. Our fun and challenging workouts help you get in shape, stay active, and build strength while mastering essential kickboxing skills." }
+      ],
+      "testimonials": [
+        { "name": "Darren Shinton", "rating": 5, "quote": "My daughter loves this place. I can't speak highly enough of the staff who make it both educational and very fun for all the kids." },
+        { "name": "Richard Horvath", "rating": 5, "quote": "Great place to train, workout and connect with people. The professors really work to meet you where you are, and they take a personal interest in their students. If you have ever thought about trying Brazilian Jiu-Jitsu this is the place to go." },
+        { "name": "Elvin Abordo", "rating": 5, "quote": "Great students. Great professors. Couldn't ask for a more welcoming environment." },
+        { "name": "Kimberly", "rating": 5, "quote": "This place and the staff is absolutely remarkable. They are truly amazing with the children and I wouldn't go anywhere else but here for Brazilian Jiu-Jitsu for my child or myself. We go about 3 to 4 times a week. I wouldn't have it any other way." },
+        { "name": "Karina", "rating": 5, "quote": "My family has been attending 5150 for over a year now. It's become more than a martial arts academy; it's a true second family. Professors O'Keeffe and Shapiro are wonderful instructors who genuinely care for not only skill development, but also the wellbeing of everyone that's part of 5150." },
+        { "name": "Lori Adams", "rating": 5, "quote": "Professor Shapiro, Professor O'Keeffe & staff are amazing! They wonderfully train with the kids while keeping them focused. The facility is spotless. We love attending class... started last January but WISH WE STARTED EARLIER!!!" }
+      ]
+    },
+    "programs": {
+      "heading": "Our Programs",
+      "intro": "Four expert-led programs built to fit every age, skill level, and training goal — from Tiny Sharks to serious adult grapplers.",
+      "serviceList": [
+        { "name": "Adults Gracie Jiu-Jitsu", "slug": "adults-gracie-jiu-jitsu", "description": "Enhance your fitness, cardiovascular health, and self-defense skills with Adult Gracie Jiu-Jitsu. Our expert-led classes provide a fun, engaging way to boost strength, flexibility, and overall well-being.", "ageRange": "Adults 16+" },
+        { "name": "Kids Gracie Jiu-Jitsu", "slug": "kids-gracie-jiu-jitsu", "description": "Our Kids Gracie Jiu-Jitsu program develops strength, discipline, and leadership in a fun, safe, and supportive environment.", "ageRange": "Ages 5–13" },
+        { "name": "Tiny Sharks — Parent & Me", "slug": "tiny-sharks", "description": "This interactive class promotes physical, mental, and emotional development, helping children build self-control, coordination, balance, and social skills while having fun with their parents!", "ageRange": "Ages 3–5 (with parent)" },
+        { "name": "Adult Kickboxing", "slug": "adult-kickboxing", "description": "Join our 5150 kickboxing classes to enhance your fitness with a dynamic mix of striking techniques. Our fun and challenging workouts help you get in shape, stay active, and build strength while mastering essential kickboxing skills.", "ageRange": "Adults 16+" }
+      ]
+    },
+    "adults-gracie-jiu-jitsu": {
+      "heading": "Adults Gracie Jiu-Jitsu",
+      "subhead": "World-class grappling for adults of every level",
+      "bodyText": "Our Adult Gracie Jiu-Jitsu program is built for real-world self-defense and real-world fitness. You'll learn leverage-based technique, live grappling, and the proven Gracie system — in an environment that's welcoming to day-one beginners and serious competitors alike. Expect to leave every class stronger, calmer, and sharper than when you walked in.",
+      "benefits": [
+        "Full-body conditioning and cardiovascular fitness",
+        "Real-world self-defense skills that work under pressure",
+        "Stress relief and sharper mental focus",
+        "A tight-knit training community that keeps you accountable"
+      ]
+    },
+    "kids-gracie-jiu-jitsu": {
+      "heading": "Kids Gracie Jiu-Jitsu",
+      "subhead": "Confidence, discipline, and life skills — on the mats",
+      "bodyText": "Our Kids Gracie Jiu-Jitsu program develops strength, discipline, and leadership in a fun, safe, and supportive environment. Kids leave every class a little more confident, a little more focused, and a lot more capable of handling whatever school, bullies, or life throws at them.",
+      "benefits": [
+        "Builds real confidence — not by winning, by showing up",
+        "Age-appropriate self-defense that actually works",
+        "Discipline, focus, and respect that carry into school and home",
+        "Structured belt progression so kids see measurable growth"
+      ]
+    },
+    "tiny-sharks": {
+      "heading": "Tiny Sharks — Parent & Me",
+      "subhead": "Their first martial arts class, with you on the mat",
+      "bodyText": "Tiny Sharks is an interactive class built for our youngest students and their parents. It promotes physical, mental, and emotional development — helping children build self-control, coordination, balance, and social skills while having fun with Mom or Dad right alongside them.",
+      "benefits": [
+        "Bond with your child through movement and play",
+        "Build coordination, balance, and body awareness",
+        "Early focus and listening skills in a structured environment",
+        "Gentle, age-appropriate intro to martial arts fundamentals"
+      ]
+    },
+    "adult-kickboxing": {
+      "heading": "Adult Kickboxing",
+      "subhead": "Striking, conditioning, and a cardio workout that doesn't feel like cardio",
+      "bodyText": "Our adult kickboxing program is a dynamic mix of striking techniques, conditioning drills, and partner work that gets you in the best shape of your life without ever touching a treadmill. Whether you want to shed pounds, build striking skills, or just punch the stress of the week into a pad — this is the class.",
+      "benefits": [
+        "Burn 600–900 calories per class",
+        "Learn real striking mechanics — jab, cross, hook, kick",
+        "Improve coordination, reflexes, and mental toughness",
+        "Zero contact required — train at your own intensity"
+      ]
+    },
+    "instructors": {
+      "heading": "Meet Your Instructors",
+      "subhead": "Learn from the best coaches in Nyack, New York",
+      "team": [
+        { "name": "Prof. Scott O'Keeffe", "role": "Head Professor & Co-Owner", "bio": "Professor Scott O'Keeffe is one of the founding professors at 5150 Martial Arts. His teaching philosophy blends old-school Gracie fundamentals with a modern, problem-solving approach that meets each student where they are — whether you've never trained a day in your life or you're prepping for competition." },
+          { "name": "Prof. Irene Shapiro", "role": "Professor & Co-Owner", "bio": "Professor Irene Shapiro is known for her technical precision, patience, and deep connection with every student who steps onto her mat. Students credit her with turning 5150 into a true second family — not just a martial arts school." },
+          { "name": "Prof. Kristofer Hardin", "role": "Professor", "bio": "Professor Kristofer Hardin brings years of high-level grappling experience to the 5150 mats. He's the coach who'll push your technique to the next level while making sure every round stays sharp, safe, and productive." }
+      ]
+    },
+    "class-schedule": {
+      "heading": "Class Schedule",
+      "subhead": "Seven days a week — morning, afternoon, and evening slots for every program",
+      "intro": "We run over 30 classes per week across all four programs. Click any class to book your free trial. Full schedule subject to change on holidays — check our Instagram or give us a call to confirm.",
+      "scheduleNote": "Full live schedule available after you book your free class. Our team will walk you through exactly which class slots fit your goals and availability."
+    },
+    "contact": {
+      "heading": "Get In Touch",
+      "subhead": "Call us, email us, or just come walk through the door — we're here seven days a week.",
+      "phone": "(845) 348-0059",
+      "email": "5150martialarts@gmail.com",
+      "address": "352 Route 59, Nyack, NY 10960",
+      "businessHours": "Open 7 days a week — full class schedule sent after booking",
+      "mapEmbed": true
+    }
+  },
+  "socialMedia": {},
+  "brandColors": ["#3225BA", "#000000", "#FFFFFF", "#F5F5F5", "#188bf6"],
+  "brandColorRoles": {
+    "primary": "#3225BA",
+    "secondary": "#000000",
+    "background": "#FFFFFF",
+    "accent": "#3225BA",
+    "textDark": "#0B0B12",
+    "textLight": "#FFFFFF"
+  },
+  "logoUrl": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/c6lfZjPJedIQ4IUIQG3m/media/6980787bf7a8777955330065.svg",
+  "existingImages": {
+    "logo": { "found": true, "url": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/c6lfZjPJedIQ4IUIQG3m/media/6980787bf7a8777955330065.svg", "format": "SVG" },
+    "team": [
+      { "name": "Prof. Scott O'Keeffe", "url": "", "isReal": false },
+      { "name": "Prof. Irene Shapiro", "url": "", "isReal": false },
+      { "name": "Prof. Kristofer Hardin", "url": "", "isReal": false }
+    ],
+    "gallery": { "count": 0, "appearsReal": false },
+    "facility": { "count": 0, "description": "" }
+  },
+  "designRecommendation": "performance-athletic-skill",
+  "designReasoning": "5150 Martial Arts serves a broad family audience (kids 3–5 through adult competitors) with a modern, accessible Gracie Jiu-Jitsu program and kickboxing. Performance-athletic fits: bold sportswear-brand energy, kinetic marquees, and one electric accent — strong, inclusive, and family-friendly without leaning too pro-fighter (no real fighter roster) or too heritage (the school reads modern/accessible, not multi-decade legacy).",
+  "currentSiteIssues": "GoHighLevel template with a disjointed color story (bright blue-violet against unbranded grey backgrounds), weak hero hierarchy, no real instructor photos, video/marquee elements that don't autoplay cleanly, underdeveloped program-detail pages, repetitive reviews section on every page, and no clear trust/credibility anchoring on the homepage. Mobile layout stacks poorly and the booking flow is a single long form (no staged 2-step funnel)."
+}

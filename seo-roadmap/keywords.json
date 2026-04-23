@@ -1,0 +1,93 @@
+{
+  "business": "5150 Martial Arts",
+  "slug": "5150-bjj",
+  "city": "Nyack, NY",
+  "county": "Rockland County",
+  "region": "Lower Hudson Valley",
+  "coreAddress": "352 Route 59, Nyack, NY 10960",
+  "neighborhoods": [
+    { "name": "Nyack", "slug": "nyack", "tier": 1, "notes": "Core service address" },
+    { "name": "South Nyack", "slug": "south-nyack", "tier": 1 },
+    { "name": "Upper Nyack", "slug": "upper-nyack", "tier": 1 },
+    { "name": "Central Nyack", "slug": "central-nyack", "tier": 1 },
+    { "name": "West Nyack", "slug": "west-nyack", "tier": 1, "notes": "Home of Palisades Center Mall" },
+    { "name": "Pearl River", "slug": "pearl-river", "tier": 1 },
+    { "name": "Nanuet", "slug": "nanuet", "tier": 1 },
+    { "name": "Spring Valley", "slug": "spring-valley", "tier": 2 },
+    { "name": "New City", "slug": "new-city", "tier": 1, "notes": "Rockland County seat" },
+    { "name": "Haverstraw", "slug": "haverstraw", "tier": 2 },
+    { "name": "Stony Point", "slug": "stony-point", "tier": 2 },
+    { "name": "Valley Cottage", "slug": "valley-cottage", "tier": 1 },
+    { "name": "Orangeburg", "slug": "orangeburg", "tier": 2 },
+    { "name": "Congers", "slug": "congers", "tier": 2 },
+    { "name": "Blauvelt", "slug": "blauvelt", "tier": 2 },
+    { "name": "Tappan", "slug": "tappan", "tier": 2 },
+    { "name": "Piermont", "slug": "piermont", "tier": 2 },
+    { "name": "Sparkill", "slug": "sparkill", "tier": 3 },
+    { "name": "Rockland County", "slug": "rockland-county", "tier": 1, "notes": "Regional umbrella" }
+  ],
+  "services": [
+    { "name": "Gracie Jiu-Jitsu", "slug": "gracie-jiu-jitsu", "primary": true },
+    { "name": "Brazilian Jiu-Jitsu", "slug": "brazilian-jiu-jitsu", "alias": "Gracie Jiu-Jitsu" },
+    { "name": "BJJ Classes", "slug": "bjj-classes", "alias": "Gracie Jiu-Jitsu" },
+    { "name": "Kids Jiu-Jitsu", "slug": "kids-jiu-jitsu", "primary": true },
+    { "name": "Kids Martial Arts", "slug": "kids-martial-arts" },
+    { "name": "Tiny Sharks Parent & Me", "slug": "parent-and-me-martial-arts" },
+    { "name": "Kickboxing", "slug": "kickboxing", "primary": true },
+    { "name": "MMA / Striking", "slug": "mma-striking" },
+    { "name": "Self-Defense", "slug": "self-defense" },
+    { "name": "Women's Jiu-Jitsu", "slug": "womens-jiu-jitsu" }
+  ],
+  "personas": [
+    { "name": "Beginners", "slug": "beginners" },
+    { "name": "Adults Over 40", "slug": "adults-over-40" },
+    { "name": "Kids (ages 5–13)", "slug": "kids" },
+    { "name": "Teens", "slug": "teens" },
+    { "name": "Women", "slug": "women" },
+    { "name": "Busy Professionals", "slug": "busy-professionals" },
+    { "name": "Weight Loss", "slug": "weight-loss" },
+    { "name": "Stress Relief", "slug": "stress-relief" },
+    { "name": "Competitors", "slug": "competitors" }
+  ],
+  "competitorTerms": [
+    "BJJ vs Wrestling",
+    "BJJ vs Judo",
+    "BJJ vs Muay Thai",
+    "Gi vs No-Gi",
+    "Karate vs Jiu-Jitsu",
+    "Kickboxing vs MMA"
+  ],
+  "curation": [
+    "Best Jiu-Jitsu gym in Rockland County",
+    "Best BJJ for kids in Nyack NY",
+    "Best kickboxing in Rockland County",
+    "Best martial arts for kids in Rockland",
+    "Top-rated BJJ academy Nyack",
+    "Best parent-and-me martial arts Rockland"
+  ],
+  "glossary": [
+    "What is Gracie Jiu-Jitsu?",
+    "What is Brazilian Jiu-Jitsu?",
+    "What is BJJ?",
+    "What is a BJJ gi?",
+    "What is No-Gi Jiu-Jitsu?",
+    "What is an open mat?",
+    "What is a belt promotion?",
+    "How old do kids need to be for BJJ?",
+    "Is BJJ safe for kids?",
+    "How many days a week should I train BJJ?",
+    "What to wear to your first BJJ class",
+    "What is the difference between BJJ and MMA?",
+    "Is kickboxing good for weight loss?",
+    "How does BJJ help with bullying?",
+    "How long does it take to get a blue belt?"
+  ],
+  "totals": {
+    "neighborhoods": 19,
+    "services": 10,
+    "personas": 9,
+    "plannedPages": 150,
+    "phases": 6,
+    "pagesPerPhase": 25
+  }
+}

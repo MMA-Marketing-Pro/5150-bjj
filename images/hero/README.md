@@ -1,0 +1,1 @@
+Place hero banner images here. Recommended: landscape orientation, minimum 1920x1080px. Filenames expected: hero-home.jpg, hero-programs.jpg, hero-instructors.jpg, hero-schedule.jpg, hero-contact.jpg, hero-adults-gracie-jiu-jitsu.jpg, hero-kids-gracie-jiu-jitsu.jpg, hero-tiny-sharks.jpg, hero-adult-kickboxing.jpg.

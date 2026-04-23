@@ -1,0 +1,45 @@
+{
+  "slug": "5150-bjj",
+  "name": "5150 Martial Arts",
+  "originalColors": ["#3225BA", "#188BF6", "#F5F5F5", "#000000", "#FFFFFF"],
+  "colorAudit": {
+    "contrastIssues": [
+      "#3225BA on #F5F5F5: passes (8.1:1) — but the grey background mutes the electric indigo, making it read as template-flat rather than branded.",
+      "#188BF6 (secondary blue) clashes with #3225BA — two blue-family colors at different saturations fighting for the accent role."
+    ],
+    "harmonyType": "monochromatic-indigo (after removing the competing secondary blue)",
+    "hierarchyStatus": "weak — primary indigo and secondary blue were competing, and the unbranded greys gave the palette no anchor.",
+    "saturationNotes": "#3225BA is a genuinely strong brand color (67% saturation, 44% lightness) — keep it. Drop the competing #188BF6. Anchor the palette on a rich obsidian dark-mode substrate so the indigo can read as an electric signal color."
+  },
+  "correctedPalette": {
+    "--bg": "#0B0A14",
+    "--bg-card": "#141221",
+    "--bg-elevated": "#1C1A2E",
+    "--text-primary": "#F5F4FA",
+    "--text-muted": "#9B97B5",
+    "--border": "#2A2740",
+    "--accent": "#3225BA",
+    "--accent-bright": "#4D3ED9",
+    "--accent-hover": "#4938D4",
+    "--accent-subtle": "rgba(50, 37, 186, 0.14)",
+    "--accent-glow": "rgba(77, 62, 217, 0.35)",
+    "--surface-white": "#FFFFFF",
+    "--surface-white-text": "#0B0A14"
+  },
+  "mode": "dark",
+  "colorShifts": [
+    "Kept the exact brand indigo (#3225BA) as the primary accent — this IS 5150's signature color and it stays untouched.",
+    "Introduced #4D3ED9 as a brighter 'bright/glow' variant for hover states, call-to-action edges, and glow effects — lets the indigo feel electric rather than flat.",
+    "Dropped the secondary blue #188BF6 — it was fighting the primary indigo and adding no brand equity.",
+    "Replaced unbranded grey #F5F5F5 with a proper obsidian substrate (#0B0A14) tinted with the indigo hue — gives the palette emotional weight and lets the indigo signal hit harder.",
+    "Added #FFFFFF as a 'surface-white' for contrast sections — performance-athletic style alternates dark obsidian with stark white content blocks for maximum visual punch."
+  ],
+  "fontRecommendation": {
+    "code": "F-PERFATH-1",
+    "body": "Inter 400-700",
+    "display": "Space Grotesk 500-700 (headings) + Archivo Black (oversized hero display)",
+    "reasoning": "Performance-athletic pairing. Space Grotesk brings geometric sportswear-brand energy for H1/H2. Archivo Black anchors the hero with a heavyweight display weight that echoes athletic-apparel graphic treatments. Inter handles body copy with clean, technical readability. All three are free via Google Fonts."
+  },
+  "designStyle": "performance-athletic-skill",
+  "cssBlock": ":root {\n  --bg: #0B0A14;\n  --bg-card: #141221;\n  --bg-elevated: #1C1A2E;\n  --text-primary: #F5F4FA;\n  --text-muted: #9B97B5;\n  --border: #2A2740;\n  --accent: #3225BA;\n  --accent-bright: #4D3ED9;\n  --accent-hover: #4938D4;\n  --accent-subtle: rgba(50, 37, 186, 0.14);\n  --accent-glow: rgba(77, 62, 217, 0.35);\n  --surface-white: #FFFFFF;\n  --surface-white-text: #0B0A14;\n}"
+}

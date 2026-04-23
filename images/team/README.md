@@ -1,0 +1,1 @@
+Place team member photos here. Name files to match: firstname-lastname.jpg (e.g., scott-okeeffe.jpg, irene-shapiro.jpg, kristofer-hardin.jpg). Recommended: portrait crop (4:5 ratio), minimum 700x875px.
