@@ -70,6 +70,19 @@
     var url = GHL_WEBHOOKS[audience];
     if (!url) return Promise.resolve({ sent: false, reason: 'no-webhook-configured' });
 
+    var formType = lead.formType || 'lead-modal';
+
+    // Fire Meta Pixel Lead event for actual lead forms only — skip the contact "say hi" form.
+    if (formType !== 'contact-message' && typeof window.fbq === 'function') {
+      try {
+        window.fbq('track', 'Lead', {
+          content_name: PROGRAM_LABELS[lead.program] || lead.program || '',
+          content_category: audience,
+          source: formType
+        });
+      } catch (e) { /* noop */ }
+    }
+
     var payload = {
       firstName: lead.firstName || '',
       lastName: lead.lastName || '',
@@ -78,6 +91,8 @@
       program: lead.program || '',
       programLabel: PROGRAM_LABELS[lead.program] || lead.program || '',
       ageBand: lead.ageBand || '',
+      message: lead.message || '',
+      formType: formType,
       audience: audience,
       source: window.location.hostname,
       page: window.location.pathname,
