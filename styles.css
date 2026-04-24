@@ -1832,13 +1832,12 @@ p { font-size: 1rem; line-height: 1.65; }
   font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 0.02em;
-  color: var(--text);
-  padding: 0.35rem 0.75rem;
-  background: rgba(11,10,20,0.75);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border: 1px solid var(--border-strong);
+  color: #FFFFFF;
+  padding: 0.45rem 0.85rem;
+  background: var(--accent);
+  border: 1px solid var(--accent-bright);
   border-radius: var(--radius-sm);
+  box-shadow: 0 8px 24px -8px var(--accent-glow);
 }
 .lp-program-body {
   padding: var(--space-lg) var(--space-md);
@@ -2207,12 +2206,24 @@ p { font-size: 1rem; line-height: 1.65; }
   outline-offset: 2px;
 }
 .lp-pick-age {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
   font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.14em;
-  color: var(--accent-bright);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
+  background: var(--accent);
+  padding: 0.22rem 0.55rem;
+  border-radius: 999px;
+  line-height: 1.2;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px -4px var(--accent-glow);
+}
+.lp-pick-card input:checked + .lp-pick-inner .lp-pick-age {
+  background: var(--accent-bright);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 6px 16px -4px var(--accent-glow);
 }
 .lp-pick-name {
   font-family: var(--font-display);
