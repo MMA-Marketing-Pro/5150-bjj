@@ -5,14 +5,111 @@
 (function () {
   'use strict';
 
+  // ---------------------------------------------------------
+  // GoHighLevel webhook routing — one webhook per audience.
+  // Leave a URL empty ('') to disable that audience's webhook.
+  // ---------------------------------------------------------
+  var GHL_WEBHOOKS = {
+    kids:   'https://services.leadconnectorhq.com/hooks/c6lfZjPJedIQ4IUIQG3m/webhook-trigger/dc876834-83e6-459c-80a9-a058343a27cc',
+    adults: 'https://services.leadconnectorhq.com/hooks/c6lfZjPJedIQ4IUIQG3m/webhook-trigger/a85e72de-28c4-40df-8a0b-7a19298dd7bc'
+  };
+
+  // Human-readable labels for the program values we emit.
+  var PROGRAM_LABELS = {
+    'tiny-sharks':                 'Tiny Sharks — Parent & Me (Ages 4–6)',
+    'kids-gracie-jiu-jitsu-7-8':   'Kids Jiu-Jitsu (Ages 7–8)',
+    'kids-gracie-jiu-jitsu-9-12':  'Kids Jiu-Jitsu (Ages 9–12)',
+    'adults-gracie-jiu-jitsu':     'Adult Jiu-Jitsu (13+)',
+    'adult-kickboxing':            'Adult Kickboxing (16+)'
+  };
+
+  function programAudience(program) {
+    if (!program) return null;
+    if (program === 'tiny-sharks' || program.indexOf('kids-') === 0) return 'kids';
+    if (program === 'adult-kickboxing' || program.indexOf('adults-') === 0) return 'adults';
+    return null;
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initIcons();
     initNav();
     initYear();
+    captureUtmParams();
     initLeadModal();
     initScrollAnimations();
     initBookingPage();
   });
+
+  /* ---------- UTM capture (survives redirect to booking.html) ---------- */
+  function captureUtmParams() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var utm = {};
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) {
+        var v = params.get(k);
+        if (v) utm[k.replace('utm_', '')] = v;
+      });
+      if (Object.keys(utm).length > 0) {
+        sessionStorage.setItem('utmParams', JSON.stringify(utm));
+      }
+    } catch (e) { /* noop */ }
+  }
+
+  function getStoredUtm() {
+    try {
+      var raw = sessionStorage.getItem('utmParams');
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) { return {}; }
+  }
+
+  /* ---------- GHL webhook POST ---------- */
+  function sendLeadToGHL(lead, opts) {
+    opts = opts || {};
+    var audience = programAudience(lead.program);
+    if (!audience) return Promise.resolve({ sent: false, reason: 'no-audience' });
+    var url = GHL_WEBHOOKS[audience];
+    if (!url) return Promise.resolve({ sent: false, reason: 'no-webhook-configured' });
+
+    var payload = {
+      firstName: lead.firstName || '',
+      lastName: lead.lastName || '',
+      email: lead.email || '',
+      phone: lead.phone || '',
+      program: lead.program || '',
+      programLabel: PROGRAM_LABELS[lead.program] || lead.program || '',
+      ageBand: lead.ageBand || '',
+      audience: audience,
+      source: window.location.hostname,
+      page: window.location.pathname,
+      pageTitle: document.title,
+      referrer: document.referrer || '',
+      submittedAt: new Date().toISOString(),
+      utm: getStoredUtm(),
+      test: !!opts.test
+    };
+
+    try {
+      return fetch(url, {
+        method: 'POST',
+        mode: 'cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        keepalive: true
+      }).then(function (res) {
+        return { sent: true, status: res.status, audience: audience, payload: payload };
+      }).catch(function (err) {
+        console.warn('[5150] GHL webhook error:', err);
+        return { sent: false, reason: 'network-error', error: String(err) };
+      });
+    } catch (e) {
+      console.warn('[5150] GHL webhook threw:', e);
+      return Promise.resolve({ sent: false, reason: 'exception', error: String(e) });
+    }
+  }
+
+  // Expose for manual test firing from the browser console
+  window._5150 = window._5150 || {};
+  window._5150.sendLeadToGHL = sendLeadToGHL;
 
   function initIcons() {
     try { if (window.lucide) lucide.createIcons(); } catch (e) { /* noop */ }
@@ -139,15 +236,21 @@
     if (form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
+        var ageBandInput = form.querySelector('[name="ageBand"]');
         var data = {
           firstName: form.firstName.value.trim(),
           lastName: form.lastName.value.trim(),
           email: form.email.value.trim(),
           phone: form.phone.value.trim(),
-          program: form.program.value
+          program: form.program.value,
+          ageBand: ageBandInput ? ageBandInput.value : ''
         };
-        // TODO: later wire this to a webhook or GHL form endpoint for backend capture
         try { sessionStorage.setItem('leadFormData', JSON.stringify(data)); } catch (err) {}
+
+        // Fire the GHL webhook (keepalive so it completes even after navigation).
+        // Never block the redirect — if GHL is down the user still reaches the calendar.
+        sendLeadToGHL(data);
+
         var target = 'booking.html?program=' + encodeURIComponent(data.program || 'adults-gracie-jiu-jitsu');
         window.location.href = target;
       });
