@@ -162,10 +162,15 @@
     var params = new URLSearchParams(window.location.search);
     var requested = (params.get('program') || 'adults-gracie-jiu-jitsu').toLowerCase();
 
+    // Legacy alias: the old single "Kids BJJ" bucket now splits by age band on the booking page.
+    // Any legacy link without an age band lands on the 7–8 calendar.
+    if (requested === 'kids-gracie-jiu-jitsu') requested = 'kids-gracie-jiu-jitsu-7-8';
+
     var calendars = document.querySelectorAll('.booking-calendar');
     var chips = document.querySelectorAll('.program-chip');
 
-    function activate(program) {
+    function activate(program, opts) {
+      var shouldScroll = !!(opts && opts.scroll);
       calendars.forEach(function (cal) {
         if (cal.getAttribute('data-program') === program) cal.classList.add('is-active');
         else cal.classList.remove('is-active');
@@ -174,9 +179,12 @@
         if (chip.getAttribute('data-program') === program) chip.classList.add('is-active');
         else chip.classList.remove('is-active');
       });
-      // Smooth scroll to calendar on program switch
-      var scroller = document.querySelector('.booking-calendar.is-active');
-      if (scroller) scroller.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Only scroll when the user actively picks a chip — don't jump past the
+      // switcher on initial load.
+      if (shouldScroll) {
+        var scroller = document.querySelector('.booking-calendar.is-active');
+        if (scroller) scroller.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
 
     // Fall back to first available calendar if requested program doesn't exist
@@ -187,11 +195,11 @@
     if (!found && calendars.length > 0) {
       requested = calendars[0].getAttribute('data-program');
     }
-    activate(requested);
+    activate(requested); // initial load — no scroll
 
     chips.forEach(function (chip) {
       chip.addEventListener('click', function () {
-        activate(chip.getAttribute('data-program'));
+        activate(chip.getAttribute('data-program'), { scroll: true });
       });
     });
 

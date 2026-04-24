@@ -69,51 +69,41 @@
 <!-- CALENDAR SECTION -->
 <section class="booking-section">
   <div class="container">
-    <!-- Adult BJJ Calendar -->
-    <div class="booking-calendar" data-program="adults-gracie-jiu-jitsu" id="calendar-adults-gracie-jiu-jitsu">
-      <!-- TODO: Replace this placeholder with the Go High Level embed code for the Adults Gracie Jiu-Jitsu class calendar -->
-      <div class="calendar-placeholder">
-        <strong>Go High Level Calendar — Adults Gracie Jiu-Jitsu</strong>
-        <p>Paste the GHL iframe embed code here to activate the Adults BJJ trial calendar. The form IDs are already wired in.</p>
-      </div>
-    </div>
-
-    <!-- Kids BJJ Calendar -->
-    <div class="booking-calendar" data-program="kids-gracie-jiu-jitsu" id="calendar-kids-gracie-jiu-jitsu">
-      <!-- TODO: Replace this placeholder with the Go High Level embed code for the Kids Gracie Jiu-Jitsu class calendar -->
-      <div class="calendar-placeholder">
-        <strong>Go High Level Calendar — Kids Gracie Jiu-Jitsu (5–13)</strong>
-        <p>Paste the GHL iframe embed code here to activate the Kids BJJ trial calendar.</p>
-      </div>
-    </div>
-
-    <!-- Tiny Sharks Calendar -->
-    <div class="booking-calendar" data-program="tiny-sharks" id="calendar-tiny-sharks">
-      <!-- TODO: Replace this placeholder with the Go High Level embed code for the Tiny Sharks Parent & Me class calendar -->
-      <div class="calendar-placeholder">
-        <strong>Go High Level Calendar — Tiny Sharks (Parent &amp; Me, 3–5)</strong>
-        <p>Paste the GHL iframe embed code here to activate the Tiny Sharks trial calendar.</p>
-      </div>
-    </div>
-
-    <!-- Adult Kickboxing Calendar -->
-    <div class="booking-calendar" data-program="adult-kickboxing" id="calendar-adult-kickboxing">
-      <!-- TODO: Replace this placeholder with the Go High Level embed code for the Adult Kickboxing class calendar -->
-      <div class="calendar-placeholder">
-        <strong>Go High Level Calendar — Adult Kickboxing</strong>
-        <p>Paste the GHL iframe embed code here to activate the Kickboxing trial calendar.</p>
-      </div>
-    </div>
-
-    <!-- Program switcher -->
-    <div style="margin-top: var(--space-lg);">
+    <!-- Program switcher — moved to top so users can reselect before scrolling to the calendar -->
+    <div class="program-switcher-wrap" style="margin-bottom: var(--space-lg);">
       <p style="font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: var(--space-sm);">Looking for a different class?</p>
       <div class="program-switcher">
-        <button type="button" class="program-chip" data-program="adults-gracie-jiu-jitsu">Adults BJJ</button>
-        <button type="button" class="program-chip" data-program="kids-gracie-jiu-jitsu">Kids BJJ</button>
-        <button type="button" class="program-chip" data-program="tiny-sharks">Tiny Sharks</button>
-        <button type="button" class="program-chip" data-program="adult-kickboxing">Kickboxing</button>
+        <button type="button" class="program-chip" data-program="adults-gracie-jiu-jitsu">Adult BJJ (13+)</button>
+        <button type="button" class="program-chip" data-program="adult-kickboxing">Kickboxing (16+)</button>
+        <button type="button" class="program-chip" data-program="kids-gracie-jiu-jitsu-9-12">Kids BJJ 9–12</button>
+        <button type="button" class="program-chip" data-program="kids-gracie-jiu-jitsu-7-8">Kids BJJ 7–8</button>
+        <button type="button" class="program-chip" data-program="tiny-sharks">Tiny Sharks 4–6</button>
       </div>
+    </div>
+
+    <!-- Adult BJJ Calendar (13+) -->
+    <div class="booking-calendar" data-program="adults-gracie-jiu-jitsu" id="calendar-adults-gracie-jiu-jitsu">
+      <iframe src="https://link.conversionbees.com/widget/booking/PoPSbdhhd9L4aQYXyXPJ" style="width: 100%; border: none; overflow: hidden; min-height: 720px;" scrolling="no" id="PoPSbdhhd9L4aQYXyXPJ_1776988633453" title="Adult Jiu-Jitsu (13+) booking calendar"></iframe>
+    </div>
+
+    <!-- Adult Kickboxing Calendar (16+) -->
+    <div class="booking-calendar" data-program="adult-kickboxing" id="calendar-adult-kickboxing">
+      <iframe src="https://link.conversionbees.com/widget/booking/0Sh7IotkLtojRQmMV2hK" style="width: 100%; border: none; overflow: hidden; min-height: 720px;" scrolling="no" id="0Sh7IotkLtojRQmMV2hK_1776988662391" title="Adult Kickboxing (16+) booking calendar"></iframe>
+    </div>
+
+    <!-- Kids BJJ — Ages 9–12 -->
+    <div class="booking-calendar" data-program="kids-gracie-jiu-jitsu-9-12" id="calendar-kids-gracie-jiu-jitsu-9-12">
+      <iframe src="https://link.conversionbees.com/widget/booking/SwwsbHjSmW4ibslG7VQc" style="width: 100%; border: none; overflow: hidden; min-height: 720px;" scrolling="no" id="SwwsbHjSmW4ibslG7VQc_1776988679866" title="Kids Jiu-Jitsu (9–12) booking calendar"></iframe>
+    </div>
+
+    <!-- Kids BJJ — Ages 7–8 -->
+    <div class="booking-calendar" data-program="kids-gracie-jiu-jitsu-7-8" id="calendar-kids-gracie-jiu-jitsu-7-8">
+      <iframe src="https://link.conversionbees.com/widget/booking/ompgBjFK3drdfVE05Iov" style="width: 100%; border: none; overflow: hidden; min-height: 720px;" scrolling="no" id="ompgBjFK3drdfVE05Iov_1776988699111" title="Kids Jiu-Jitsu (7–8) booking calendar"></iframe>
+    </div>
+
+    <!-- Tiny Sharks — Ages 4–6 -->
+    <div class="booking-calendar" data-program="tiny-sharks" id="calendar-tiny-sharks">
+      <iframe src="https://link.conversionbees.com/widget/booking/iQv71G8ngQA6SyJSanPx" style="width: 100%; border: none; overflow: hidden; min-height: 720px;" scrolling="no" id="iQv71G8ngQA6SyJSanPx_1776988734833" title="Tiny Sharks Parent &amp; Me (4–6) booking calendar"></iframe>
     </div>
   </div>
 </section>
@@ -170,5 +160,7 @@
 
 <script src="https://unpkg.com/lucide@latest"></script>
 <script src="scripts.js"></script>
+<!-- Go High Level form/calendar embed script — loaded once for all 5 calendars -->
+<script src="https://link.conversionbees.com/js/form_embed.js" type="text/javascript"></script>
 </body>
 </html>
