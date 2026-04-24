@@ -255,8 +255,22 @@ src="https://www.facebook.com/tr?id=1139095824877075&ev=PageView&noscript=1"
   (function () {
     var form = document.getElementById('contact-message-form');
     if (!form) return;
+
+    // Attach the same honeypot + time trap the lead modal uses.
+    var openedAt = Date.now();
+    if (window._5150 && typeof window._5150.attachHoneypot === 'function') {
+      window._5150.attachHoneypot(form);
+    }
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+
+      // Silently drop bot submissions — no webhook, no success message.
+      if (window._5150 && typeof window._5150.isLikelySpam === 'function'
+          && window._5150.isLikelySpam(form, openedAt)) {
+        return;
+      }
+
       var data = {
         firstName: form.firstName.value.trim(),
         lastName: form.lastName.value.trim(),

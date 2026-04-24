@@ -122,9 +122,12 @@
     }
   }
 
-  // Expose for manual test firing from the browser console
+  // Expose for manual test firing from the browser console, and so inline
+  // page scripts (e.g. contact form) can reuse the anti-spam helpers.
   window._5150 = window._5150 || {};
   window._5150.sendLeadToGHL = sendLeadToGHL;
+  window._5150.attachHoneypot = attachHoneypot;
+  window._5150.isLikelySpam = isLikelySpam;
 
   function initIcons() {
     try { if (window.lucide) lucide.createIcons(); } catch (e) { /* noop */ }
@@ -195,6 +198,35 @@
     });
   }
 
+  /* ---------- Anti-spam helpers ----------
+     Two low-friction bot traps used on all lead/contact forms:
+       1. Honeypot field — hidden input a real user never sees. Bots auto-fill
+          every input, so any value here = spam.
+       2. Time trap — reject submissions faster than MIN_FILL_MS after the form
+          first became visible. No human can fill name/email/phone/program in
+          under 1.5s, but headless bots submit instantly. */
+  var MIN_FILL_MS = 1500;
+
+  function attachHoneypot(form) {
+    if (!form || form.querySelector('input[data-hp]')) return;
+    var hp = document.createElement('input');
+    hp.type = 'text';
+    hp.name = 'website';
+    hp.tabIndex = -1;
+    hp.autocomplete = 'off';
+    hp.setAttribute('aria-hidden', 'true');
+    hp.setAttribute('data-hp', '1');
+    hp.style.cssText = 'position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none;';
+    form.insertBefore(hp, form.firstChild);
+  }
+
+  function isLikelySpam(form, openedAt) {
+    var hp = form.querySelector('input[data-hp]');
+    if (hp && hp.value) return true;
+    if (openedAt && (Date.now() - openedAt) < MIN_FILL_MS) return true;
+    return false;
+  }
+
   /* ---------- Lead Modal ---------- */
   function initLeadModal() {
     var modal = document.getElementById('lead-modal');
@@ -204,6 +236,9 @@
     var closeBtn = modal.querySelector('.lead-modal__close');
     var form = modal.querySelector('form');
     var programSelect = modal.querySelector('[name="program"]');
+    var openedAt = 0;
+
+    if (form) attachHoneypot(form);
 
     function openModal(presetProgram) {
       if (presetProgram && programSelect) {
@@ -211,6 +246,7 @@
       }
       modal.classList.add('is-open');
       document.body.style.overflow = 'hidden';
+      openedAt = Date.now();
       setTimeout(function () {
         var first = modal.querySelector('input[name="firstName"]');
         if (first) first.focus();
@@ -251,6 +287,10 @@
     if (form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
+
+        // Silently drop obvious bot submissions — no webhook, no redirect.
+        if (isLikelySpam(form, openedAt)) return;
+
         var ageBandInput = form.querySelector('[name="ageBand"]');
         var data = {
           firstName: form.firstName.value.trim(),
