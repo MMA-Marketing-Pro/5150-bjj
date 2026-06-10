@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /booking.html
 
-Sitemap: https://5150-bjj.pages.dev/sitemap.xml
+Sitemap: https://5150bjj.com/sitemap.xml

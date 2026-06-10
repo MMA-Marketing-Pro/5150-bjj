@@ -306,7 +306,7 @@
         // Never block the redirect — if GHL is down the user still reaches the calendar.
         sendLeadToGHL(data);
 
-        var target = 'booking.html?program=' + encodeURIComponent(data.program || 'adults-gracie-jiu-jitsu');
+        var target = '/booking?program=' + encodeURIComponent(data.program || 'adults-gracie-jiu-jitsu');
         window.location.href = target;
       });
     }
