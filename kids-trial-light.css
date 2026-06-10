@@ -1,0 +1,116 @@
+/* =========================================================
+   KIDS TRIAL LANDING PAGE — LIGHT VARIANT (kids-trial-light.html)
+   Loads AFTER styles.css. Every rule is scoped to body.lp-light
+   so the shared stylesheet stays untouched for all other pages.
+
+   Direction: exact tonal inversion of the brand system —
+   Porcelain #F5F4FA field (the dark theme's text color),
+   Obsidian #0B0A14 ink, white cards, indigo-tinted shadows.
+   Electric Indigo marquee + final CTA stay as full-color bands.
+   ========================================================= */
+
+body.lp-light {
+  --bg: #F5F4FA;
+  --bg-card: #FFFFFF;
+  --bg-elevated: #ECEAF5;
+  --text: #0B0A14;
+  --text-muted: #595673;
+  --border: #E2E0EE;
+  --border-strong: #C9C5DF;
+  --accent-subtle: rgba(50, 37, 186, 0.08);
+  --accent-glow: rgba(77, 62, 217, 0.22);
+}
+
+/* ---------- Nav: light scrim over hero, white glass on scroll ---------- */
+.lp-light .nav::before {
+  background: linear-gradient(180deg, rgba(245, 244, 250, 0.92) 0%, rgba(245, 244, 250, 0.55) 55%, rgba(245, 244, 250, 0) 100%);
+}
+.lp-light .nav.scrolled {
+  background: rgba(248, 247, 252, 0.85);
+  border-bottom-color: var(--border);
+}
+
+/* ---------- Buttons: keep white type on indigo fills ---------- */
+.lp-light .btn-primary { color: #FFFFFF; }
+.lp-light .btn-white:hover { background: var(--text); color: #FFFFFF; }
+
+/* ---------- Hero: porcelain scrim instead of obsidian ---------- */
+.lp-light .lp-hero-bg img {
+  filter: grayscale(0.08) contrast(1.05) brightness(1.04) saturate(1.05);
+}
+.lp-light .lp-hero-bg::after {
+  background:
+    radial-gradient(ellipse 65% 70% at 18% 55%, rgba(245, 244, 250, 0.5), transparent 72%),
+    linear-gradient(90deg, rgba(245, 244, 250, 0.97) 0%, rgba(245, 244, 250, 0.85) 38%, rgba(245, 244, 250, 0.3) 72%, rgba(245, 244, 250, 0.55) 100%),
+    linear-gradient(180deg, rgba(245, 244, 250, 0.7) 0%, rgba(245, 244, 250, 0) 28%, rgba(245, 244, 250, 0) 60%, rgba(245, 244, 250, 0.97) 100%);
+}
+.lp-light .lp-badge {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(50, 37, 186, 0.28);
+  color: var(--accent);
+}
+.lp-light .lp-badge-dot {
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent-bright);
+}
+.lp-light .lp-hero-title {
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.7),
+    0 2px 14px rgba(245, 244, 250, 0.85);
+}
+.lp-light .lp-hero-lead { text-shadow: 0 1px 14px rgba(245, 244, 250, 0.9); }
+.lp-light .lp-hero-reassure span { text-shadow: 0 1px 8px rgba(245, 244, 250, 0.9); }
+.lp-light .lp-hero-ctas .btn-ghost { background: rgba(255, 255, 255, 0.62); }
+.lp-light .lp-hero-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(11, 10, 20, 0.1);
+  box-shadow: 0 24px 60px -24px rgba(28, 22, 80, 0.28);
+}
+.lp-light .lp-card-eyebrow { color: var(--accent); }
+.lp-light .lp-step-num { color: var(--accent); }
+
+/* ---------- Cards & hover shadows: indigo tint, not black ---------- */
+.lp-light .lp-pain-card:hover { box-shadow: 0 24px 48px -28px rgba(28, 22, 80, 0.2); }
+.lp-light .lp-program:hover { box-shadow: 0 36px 64px -32px rgba(28, 22, 80, 0.22); }
+.lp-light .lp-transform-img-a,
+.lp-light .lp-transform-img-b {
+  box-shadow: 0 28px 60px -24px rgba(28, 22, 80, 0.3);
+  border-color: rgba(11, 10, 20, 0.1);
+}
+
+/* ---------- Accent-filled elements keep white type ---------- */
+.lp-light .lp-transform-badge-num,
+.lp-light .lp-transform-badge-label { color: #FFFFFF; }
+.lp-light .lp-program-flag { color: #FFFFFF; }
+.lp-light .marquee { color: #FFFFFF; }
+.lp-light .marquee-track span .dot { background: #FFFFFF; }
+.lp-light .cta-banner h2 { color: #FFFFFF; }
+
+/* ---------- White walkthrough section: add definition on light field ---------- */
+.lp-light .section--white { border-block: 1px solid var(--border); }
+
+/* ---------- Social proof ---------- */
+.lp-light .lp-quote::before { opacity: 0.16; }
+.lp-light .lp-stars { color: #DD9A06; }
+.lp-light .lp-proof-photo figcaption strong { color: var(--accent); }
+
+/* ---------- Footer: light band instead of near-black ---------- */
+.lp-light .footer {
+  background: var(--bg-elevated);
+  border-top-color: var(--border);
+}
+.lp-light .footer-col h4,
+.lp-light .lp-footer-contact a:hover { color: var(--accent); }
+.lp-light .lp-footer-contact i { color: var(--accent); }
+.lp-light .powered-by a { color: var(--accent); }
+
+/* ---------- Lead modal: white card, soft backdrop ---------- */
+.lp-light .lead-modal__backdrop { background: rgba(11, 10, 20, 0.45); }
+.lp-light .lead-modal__card {
+  border-color: var(--border);
+  box-shadow: 0 40px 80px -20px rgba(28, 22, 80, 0.3), 0 0 60px -20px var(--accent-glow);
+}
+.lp-light .lp-lead-eyebrow { color: var(--accent); }
+.lp-light .form-field input,
+.lp-light .form-field textarea,
+.lp-light .form-field select { background: #FFFFFF; border-color: var(--border-strong); }
